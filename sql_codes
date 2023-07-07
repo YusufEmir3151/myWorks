@@ -5,7 +5,6 @@ CREATE TABLE kisiler (
   kisi_soyadi VARCHAR(30),
   kisi_eposta VARCHAR(50)
 );
-/*-TABLO OLUŞTURMA-*/
 
 
 
