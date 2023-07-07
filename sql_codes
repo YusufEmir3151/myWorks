@@ -26,5 +26,36 @@ select * from kisiler k
 /*-TABLOYA VERİ GİRİŞİ-*/
 insert into kisiler values (2,'Abdullah','Sağlam', 'Abdullahsalam223@gmail.com')
 
+/*-İKİ TABLO BİRLEŞTİRME-*/
+select * from kisiler k  inner  join arabalar a  on k.kisi_sira = a.oto_sira 
 
+___________________________________________________________________________________
 
+--Tablo oluşturulması 
+
+CREATE TABLE OrnekTablomuz
+(
+    Id INT PRIMARY KEY IDENTITY(1, 1),
+    Tarih DATETIME,
+    Ad NVARCHAR(100)
+);
+
+--Otomatik tarih eklettirme kodu 
+
+ALTER TABLE OrnekTablomuz
+ADD CONSTRAINT DEF_CONSTRAINT_Tarih
+    DEFAULT GETDATE()FOR Tarih;
+
+--Veri ekleme işlemi 
+
+INSERT INTO dbo.OrnekTablomuz
+(
+    Ad
+)
+VALUES
+(N'Yavuz Selim Kart');
+
+--Kontrol edilmesi 
+
+SELECT *
+FROM dbo.OrnekTablomuz;
