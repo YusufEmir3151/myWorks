@@ -5,8 +5,21 @@ CREATE TABLE kisiler (
   kisi_soyadi VARCHAR(30),
   kisi_eposta VARCHAR(50)
 );
+--belirli sütunları gösterme--
+select k.kisi_sira,kisi_adi,kisi_soyadi,kisi_eposta  from kisiler k 
 
+--Sütun ekleme--
+alter table kisiler add tcNo char(11)
 
+--Sıralama Yapma--
+select * from kisiler order by kisi_sira  asc
+
+--(Sıralama yapmada 'ASC' komutu küçükten büyüğe _ 'DESC' komutu ise büyükten küçüğe sıralama yapar)--
+
+select count(*) from kisiler k  
+
+/*-TABLOYU GÖSTERME-*/
+select * from kisiler k  
 
 /*-KİŞİLER TABLOSUNDAN kişi_adi SATIRINDA Y İLE BAŞLAYAN SATIR-*/
 select * from kisiler k  where kisi_adi  like 'Y%'
@@ -20,8 +33,6 @@ delete from kisiler where kisi_sira= 1
 /*-VERİ GÜNCELLEME-*/
 update kisiler set kisi_adi='Yusuf Emir'  where kisi_adi='YusufEmir'  
 
-/*-TABLOYU GÖSTERME-*/
-select * from kisiler k  
 
 /*-TABLOYA VERİ GİRİŞİ-*/
 insert into kisiler values (2,'Abdullah','Sağlam', 'Abdullahsalam223@gmail.com')
@@ -59,3 +70,5 @@ VALUES
 
 SELECT *
 FROM dbo.OrnekTablomuz;
+
+
